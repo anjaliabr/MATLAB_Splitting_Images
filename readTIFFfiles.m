@@ -7,3 +7,9 @@ assert(fid>=3, msg); % checking if fid is not less than 3. sends a message if it
 fprintf(fid, '%s\n', S.name); % print the list of files
 fclose(fid);
 variable = fileread(fullfile(d,'files.txt'))
+
+
+%new
+fileID=fopen(fullfile(d, 'files.txt'),'r');
+formatSpec='%s';
+A=fscanf(fileID,formatSpec)
