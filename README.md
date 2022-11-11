@@ -1,4 +1,4 @@
-# Splitting Images in MATLAB
+# Splitting Data in MATLAB
 
 ## Project Description:
 Using MATLAB, we are splitting .tif images into three sets; test, train and validation. 
