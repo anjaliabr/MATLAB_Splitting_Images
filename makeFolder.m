@@ -1,6 +1,6 @@
 function makeFolder(F)
 
-    D = '/Users/anjalia/Desktop/VIP-Code';
+    D = #path
     if ~exist(fullfile(D,F),'dir')
         mkdir(fullfile(D,F))
     end
