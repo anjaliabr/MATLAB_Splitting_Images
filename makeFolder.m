@@ -1,6 +1,5 @@
-function makeFolder(F)
+function makeFolder(D, F)
 
-    D = #path
     if ~exist(fullfile(D,F),'dir')
         mkdir(fullfile(D,F))
     end
