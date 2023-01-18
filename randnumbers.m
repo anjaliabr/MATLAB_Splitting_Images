@@ -1,5 +1,5 @@
 
-function [testing, validation, training] = randnumbersVIP(numImgs, perctges)
+function [testing, validation, training] = randnumbers(numImgs, perctges)
 
 % calculates the amount for training, validation, and testing based on n
 numtraining = round(numImgs*perctges(1));
