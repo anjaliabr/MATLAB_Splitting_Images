@@ -1,22 +1,20 @@
-function splitdata(F)
+function splitData(d, name, values)
 
-D = %pathname
+    % creates a list for rawData and gt .tiff files
+    rawData = readTIFFfiles(d, 'rawdata');
+    gt = readTIFFfiles(d, 'gt')
 
-% checks if there is a folder in that directory
-if ~exist(fullfile(D,F),'dir')
-    mkdir(fullfile(D,F))
-end
+    for i = 1:length(values)
+        % copying images to the rawdata folder
+        imgname = fullfile(fullfile(d,'rawdata'),rawData(i).name);
+        directory = fullfile(fullfile(d,name),'rawdata');
+        copyfile(imgname, directory);
 
-% creates two folders 'rawdata' and 'gt' with the folder
-for k = 1:2
-    Z = fullfile(D,F,sprintf('rawdata',k));
-    Y = fullfile(D,F,sprintf('gt',k));
-    
-    % checks if the 'rawdata' and 'gt' folders are present in the current folder
-    if ~exist(Z,'dir')
-        mkdir(Z)
-    end
-    if ~exist(Y,'dir')
-        mkdir(Y)
+        % copying images to the gt folder
+        imgname = fullfile(fullfile(d,'gt'),gt(i).name);
+        directory = fullfile(fullfile(d,name),'gt');
+        copyfile(imgname, directory);
     end
 end
+
+
