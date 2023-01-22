@@ -1,7 +1,10 @@
-% Write a program that reads Tiff images and display it
-function displaytifimage(d)
+% Function that reads Tiff images and display it
+% Inputs -
+% d - directory path name
+
+function displaytifimage(D)
     %change path name below if needed
-    TiffList = dir(fullfile(d,'*.tif')); % lists folder contents with the extension .tif
+    TiffList = dir(fullfile(D,'*.tif')); % lists folder contents with the extension .tif
 
     % using a for loop to display the images
     for i = 1:numel(TiffList)
