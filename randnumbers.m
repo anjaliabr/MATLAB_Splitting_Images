@@ -1,6 +1,14 @@
+% Function that returns the values to split the images based on the
+% percentages.
+% Inputs
+% D - directory path name
+% perctges - list of percentages for training, validation and testing
 
-function [training, validation, testing] = randnumbers(numImgs, perctges)
+function [training, validation, testing] = randnumbers(D, perctges)
 
+  %counting the number of images in the directory 
+  numImgs = numel(D);
+    
   % calculates the amount for training, validation, and testing based on n
   numtraining = round(numImgs*perctges(1));
   numvalidation = round(numImgs*perctges(2));
@@ -18,5 +26,6 @@ function [training, validation, testing] = randnumbers(numImgs, perctges)
   % testing and validation
   TestplusVali = [testing validation];
   training = setdiff(1:numImgs, TestplusVali);
+  
 end 
 
