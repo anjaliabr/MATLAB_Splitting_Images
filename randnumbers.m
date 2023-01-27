@@ -6,6 +6,8 @@
 
 function [training, validation, testing] = randnumbers(D, perctges)
 
+  a = dir(fullfile(D, '*.tif'))
+
   %counting the number of images in the directory 
   numImgs = numel(D);
     
