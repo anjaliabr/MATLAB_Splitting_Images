@@ -1,16 +1,19 @@
 
 folderNames = {'Training', 'Validation', 'Testing'}; % folder names
-d = '/Users/anjalia/Desktop/VIP-Code/data';
+d = %directory path name;
 
+% creating folders using the folderNames
 for i = 1:length(folderNames)
     makeFolder(d, folderNames{i});
 end
 
+% Using rawdata directory in collecting the random numbers
 f = fullfile(d,'rawdata');
 
 perctges = [0.7 0.2 0.1]; % the percentages can be user-defined
 [training, validation, testing] = randnumbers(f, perctges);
 
+% moving the samples in the three folders
 for i = 1:length(folderNames)
     if i == 1
         splitData(d, folderNames{i}, training);
